@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bethany Jones Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        
+        }
+
+        body {
+            background-color: #ebe4d9;
+            color: #2b2b2b;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+            padding: 30px 10%;
+            letter-spacing: 2px;
+            font-size: 14px;
+            font-weight: bold;
+            flex-wrap: wrap;
+            gap: 200px;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #2b2b2b;
+        }
+
+       
+        .hero-container {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .card {
+            display: flex;
+            border: 1px solid #2b2b2b;
+            width: 100%;
+            max-width: 1000px;
+            min-height: 500px;
+            background-color: transparent;
+        }
+
+       
+        .text-content {
+            flex: 1.2;
+            padding: 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            max-width: 420px;
+        }
+
+        .handle {
+            font-weight: bold;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 18px;
+        }
+
+        .social-icons i {
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+
+        .social-icons i:hover {
+            transform: scale(1.2);
+        }
+        .image-content {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-content img {
+            width: 340px;
+            height: 340px;
+            object-fit: cover;
+            display: block;
+            border-radius: 10px;
+            max-width: 100%;
+        }
+
+        @media (max-width: 1024px) {
+            .card {
+                flex-direction: column;
+            }
+
+            .text-content {
+                padding: 40px 30px;
+            }
+
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .navbar {
+                justify-content: center;
+                font-size: 12px;
+                gap: 20px;
+            }           
+
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="#">BIO</a>
+        <a href="#">PORTFOLIO</a>
+        <a href="#">PODCAST</a>
+        <a href="#">BLOG</a>
+    </nav>
+    <main class="hero-container">
+        <div class="card">
+            <div class="text-content">
+                <div>
+                    <h1>Bethany Jones</h1>
+                    <p>I'm a dedicated culture critic and blogger located in San Francisco, California.</p>
+                </div>
+                <div>
+                    <p class="handle">@reallygreatsite</p>
+                    <div class="social-icons">
+                        <i class="fa-brands fa-instagram"></i>
+                        <i class="fa-brands fa-facebook-f"></i>
+                        <i class="fa-brands fa-x-twitter"></i>
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="image-content">
+                <img src="https://images.pexels.com/photos/3094219/pexels-photo-3094219.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1260&amp;h=750&amp;dpr=1" alt="Bethany Jones">
+            </div>
+        </div>
+    </main>
+</body>
+</html>
