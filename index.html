@@ -1,1 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechZone Responsive Navbar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .navbar {
+            background-color: #fd8282;
+            padding: 0 20px;
+        }
+
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 65px;
+        }
+
+        .logo {
+            color: #0c0c0c;
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li a {
+            display: block;
+            color: rgb(19, 18, 18);
+            text-decoration: none;
+            padding: 23px 18px;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            background-color: gray;
+            color: #00d4ff;
+        }
+
+     
+        .menu-btn {
+            display: none;
+            font-size: 28px;
+            color: white;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+     
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-wrap: wrap;
+                padding: 15px 0;
+            }
+
+            .menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                width: 100%;
+                margin-top: 15px;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li a {
+                padding: 14px 10px;
+                text-align: center;
+                border-top: 1px solid #555;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <div class="nav-container">
+
+            <a href="#" class="logo">TechZone</a>
+
+            <button
+                class="menu-btn"
+                id="menuBtn"
+                aria-label="Toggle navigation"
+                aria-expanded="false"
+                aria-controls="navLinks">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+        </div>
+    </nav>
+
+    <script>
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", function () {
+            navLinks.classList.toggle("active");
+
+            const isOpen = navLinks.classList.contains("active");
+
+            menuBtn.setAttribute("aria-expanded", isOpen);
+            menuBtn.innerHTML = isOpen ? "&times;" : "☰";
+        });
+
+    
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("active");
+                menuBtn.setAttribute("aria-expanded", "false");
+                menuBtn.innerHTML = "☰";
+            });
+        });
+    </script>
+
+</body>
+</html>
